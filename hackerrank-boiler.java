@@ -5,12 +5,12 @@ import java.util.stream.*;
 
 public class Solution {
 	
-		int numOfLines;
+	int numOfLines;
 	
-		public Solution(int num){
-		numOfLines = num;
-	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	    readfile(in);
+	public Solution(int num){
+	numOfLines = num;
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	readfile(in);
 	}
 
     public static void main(String[] args) {
