@@ -3,27 +3,41 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Solution {
-
-    public Solution(int num){
-      BufferedReader in = new BufferedReader(InputStreamReader(System.in));
-      solution.readfile(in, num);
-    }
+	
+	int numOfLines;
+	
+	public Solution(int num){
+		numOfLines = num;
+	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	    readfile(in);
+	}
 
     public static void main(String[] args) {
-        //set number of lines to read, if ? then use 0
         Solution solution = new Solution(1);
     }
+    
 
-    private void readfile(BufferedReader testCase, int numOfLines){
-        try(Stream<String> lines = testCase.lines(){
-            printResults(lines, numOfLines);
-        }
+    private void readfile(BufferedReader testCase){
+    	if(numOfLines == 0){
+    		try(Stream<String> lines = testCase.lines()){
+    			printResults(lines);
+    		}}
+    	else {
+    		try(Stream<String> line = testCase.lines().limit(numOfLines)){
+    			printResults(line);            
+    		}}
     }
-
-    private void printResults(Steam<String> streamOfFileLines, int numOfLines){
-      if(numOfLines == 1){
-        
-      }
-        
+            
+    private void printResults(Stream<String> streamOfFileLines){ 
+    	if(numOfLines == 1){
+    		Optional<String> op = streamOfFileLines.findAny();
+            op.ifPresent((z) -> {
+            	//int i = 0;
+            	//int n = Integer.parseInt(z);
+            	//while( i < 10) System.out.println(n +" x "+ (++i) +" = "+ n*i);
+            });
+    	}
+    }
+}
     }
 }
