@@ -5,19 +5,19 @@ import java.util.stream.*;
 
 public class Solution {
 	
-        int numOfLines;
+		int numOfLines;
 	
-        public Solution(int num){
-	numOfLines = num;
-	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	readfile(in);
-	
-    }
+		public Solution(int num){
+		numOfLines = num;
+	    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	    readfile(in);
+	}
 
     public static void main(String[] args) {
         Solution solution = new Solution(1);
     }
     
+
     private void readfile(BufferedReader testCase){
     	if(numOfLines == 0){
     		try(Stream<String> lines = testCase.lines()){
@@ -44,7 +44,21 @@ public class Solution {
     }
     
     private Stream<?> getAnswer(String line){
+    	
     	Stream<String> answer = Stream.of(line);
     	return answer;
+    	
+ /*   	StringBuilder even = new StringBuilder();
+    	StringBuilder odd = new StringBuilder();
+    	for(int i=0; i<wordArray.length; i++){
+    		if(i % 2 == 0) even.append(wordArray[i]);
+    		else odd.append(wordArray[i]);
+    	}
+    	
+    	String finalWord = even.toString() + " " + odd.toString();
+    	
+    	Stream<String> wordStream = Stream.of(finalWord);
+    	return wordStream;
+*/    	
     }
 }
