@@ -5,7 +5,7 @@ import java.util.stream.*;
 
 public class Solution {
 	
-	int numOfLines;
+	private int numOfLines;
 	
 	public Solution(int num){
 	numOfLines = num;
